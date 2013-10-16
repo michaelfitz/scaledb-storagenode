@@ -8,7 +8,7 @@ Version: '5.5'
 Versions:
 - '5.5'
 Cartridge-Version: 0.2.3
-Cartridge-Vendor: redhat
+Cartridge-Vendor: developercorey
 License: GPL
 Vendor: MariaDB Foundation
 Source-Url: https://github.com/developercorey/openshift-cartridge-mariadb.git
