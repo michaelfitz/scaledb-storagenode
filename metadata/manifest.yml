@@ -11,7 +11,7 @@ Cartridge-Version: 0.2.3
 Cartridge-Vendor: developercorey
 License: GPL
 Vendor: MariaDB Foundation
-Source-Url: https://github.com/developercorey/openshift-cartridge-mariadb.git
+Source-Url: https://github.com/openshift-cartridges/openshift-cartridge-mariadb.git
 Categories:
 - service
 - database
