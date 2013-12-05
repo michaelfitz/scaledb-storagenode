@@ -3,7 +3,7 @@ This cartridge is documented in the [Cartridge Guide](http://openshift.github.io
 
 ### Installation
   
-    rhc add-cartridge https://raw.github.com/openshift-cartridges/openshift-cartridge-mariadb/master/metadata/manifest.yml -a $appname
+    rhc add-cartridge https://raw.github.com/openshift-cartridges/mariadb-cartridge/master/metadata/manifest.yml -a $appname
     
 This cartridge was extracted from the OpenShift Origin repository here: https://github.com/openshift/origin-server and can be installed
 as a downloadable cartridge.  It exposes both OPENSHIFT_MARIADB and OPENSHIFT_MYSQL environment variables for compatibility.
