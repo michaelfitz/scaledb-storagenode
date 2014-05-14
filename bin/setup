@@ -3,3 +3,9 @@
 mkdir -p $OPENSHIFT_MARIADB_DIR/{log,pid,socket,data,run}
 
 cp conf/my.cnf.erb conf/my.cnf.erb.hidden
+
+mkdir michael44
+cd michael44
+wget www.scaledb.com/scaledb-latest-mariadb-5.5.34.tar.gz
+gunzip scaledb-latest-mariadb-5.5.34.tar.gz
+tar xvf  scaledb-latest-mariadb-5.5.34.tar
