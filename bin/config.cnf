@@ -17,14 +17,14 @@
 # The following options will be passed to all MySQL clients
 [client]
 #password       = your_password
-port            = 3306
+port            = 9306
 socket          = /tmp/mysql.sock
 
 # Here follows entries for some specific programs
 
 # The MySQL server
 [mysqld]
-port            = 3306
+port            = 9306
 socket          = /tmp/mysql.sock
 skip-external-locking
 key_buffer_size = 16K
@@ -35,9 +35,9 @@ read_buffer_size = 256K
 read_rnd_buffer_size = 256K
 net_buffer_length = 2K
 thread_stack = 240K
-datadir =/opt/repo/michael44/mariadb-5.5.34-linux-x86_64/data
+datadir =${OPENSHIFT_MARIADB_DIR}/michael44/mariadb-5.5.34-linux-x86_64/data
 
-basedir=/opt/repo/michael44/mariadb-5.5.34-linux-x86_64 
+basedir=${OPENSHIFT_MARIADB_DIR}/michael44/mariadb-5.5.34-linux-x86_64 
 
 # Don't listen on a TCP/IP port at all. This can be a security enhancement,
 # if all processes that need to connect to mysqld run on the same host.
