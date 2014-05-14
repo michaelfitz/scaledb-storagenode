@@ -36,8 +36,8 @@ function start {
     ${OPENSHIFT_MARIADB_DIR}/michael44/scaledb-latest-mariadb-5.5.34/lib/scaledb_slm ${OPENSHIFT_MARIADB_DIR}/bin/slm.cnf &
     
     
-    #sleep 20
-    #${OPENSHIFT_JELASTICBASIC_DIR}/michael44/mariadb-5.5.34-linux-x86_64/bin/mysqld --defaults-file=${OPENSHIFT_MARIADB_DIR}/bin/config.cnf &
+    sleep 20
+    ${OPENSHIFT_MARIADB_DIR}/michael44/mariadb-5.5.34-linux-x86_64/bin/mysqld --defaults-file=${OPENSHIFT_MARIADB_DIR}/bin/config.cnf &
     
     #${OPENSHIFT_MARIADB_DIR/michael44/mariadb-5.5.34-linux-x86_64/bin/mysql -uroot -e "INSTALL PLUGIN scaledb SONAME 'ha_scaledb.so'"
 
