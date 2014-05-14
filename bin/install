@@ -25,8 +25,8 @@ echo 'Installing mariadb'
 export LD_LIBRARY_PATH="${OPENSHIFT_MARIADB_DIR}/michael44/scaledb-latest-mariadb-5.5.34/lib"
 
 
-sed -e "s|OPENSHIFT_MARIADB_DIR|${OPENSHIFT_MARIADB_DIR}|" config.cnf.tmp > config.cnf
-sed -e "s|OPENSHIFT_MARIADB_DIR|${OPENSHIFT_MARIADB_DIR}|" cas.cnf.tmp > cas.cnf
+sed -e "s|OPENSHIFT_MARIADB_DIR|${OPENSHIFT_MARIADB_DIR}|" ${OPENSHIFT_MARIADB_DIR}/bin/config.cnf.tmp > ${OPENSHIFT_MARIADB_DIR}/bin/config.cnf
+sed -e "s|OPENSHIFT_MARIADB_DIR|${OPENSHIFT_MARIADB_DIR}|" ${OPENSHIFT_MARIADB_DIR}/bin/cas.cnf.tmp > ${OPENSHIFT_MARIADB_DIR}/bin/cas.cnf
 #${OPENSHIFT_MARIADB_DIR}/michael44/mariadb-5.5.34-linux-x86_64/scripts/mysql_install_db   --basedir=${OPENSHIFT_MARIADB_DIR}/michael44/mariadb-5.5.34-linux-x86_64   --defaults-file=${OPENSHIFT_MARIADB_DIR}/bin/config.cnf  > t.txt
 
 
