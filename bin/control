@@ -32,12 +32,12 @@ function start {
   if ! is_running; then
     echo "Starting MySQL cartridge"
     
-    ${OPENSHIFT_MARIADB_DIR}/michael44/scaledb-latest-mariadb-5.5.34/lib/scaledb_cas ${OPENSHIFT_MARIADB_DIR}/bin/cas.cnf 127.0.0.1 13306 CAS1 &
-    ${OPENSHIFT_MARIADB_DIR}/michael44/scaledb-latest-mariadb-5.5.34/lib/scaledb_slm ${OPENSHIFT_MARIADB_DIR}/bin/slm.cnf &
+    ${OPENSHIFT_MARIADB_DIR}/michael44/scaledb-latest-mariadb-5.5.34/lib/scaledb_cas ${OPENSHIFT_MARIADB_DIR}/bin/cas.cnf 127.0.0.1 13306 CAS1  > t1.txt 2>&1 &
+    ${OPENSHIFT_MARIADB_DIR}/michael44/scaledb-latest-mariadb-5.5.34/lib/scaledb_slm ${OPENSHIFT_MARIADB_DIR}/bin/slm.cnf > t2.txt 2>&1 &
     
     
     sleep 20
-    ${OPENSHIFT_MARIADB_DIR}/michael44/mariadb-5.5.34-linux-x86_64/bin/mysqld --defaults-file=${OPENSHIFT_MARIADB_DIR}/bin/config.cnf &
+    ${OPENSHIFT_MARIADB_DIR}/michael44/mariadb-5.5.34-linux-x86_64/bin/mysqld --defaults-file=${OPENSHIFT_MARIADB_DIR}/bin/config.cnf > t3.txt 2>&1 &
     
     #${OPENSHIFT_MARIADB_DIR/michael44/mariadb-5.5.34-linux-x86_64/bin/mysql -uroot -e "INSTALL PLUGIN scaledb SONAME 'ha_scaledb.so'"
 
