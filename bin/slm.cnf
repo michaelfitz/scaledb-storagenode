@@ -3,4 +3,4 @@ slm_port = 43306
 
 
 scaledb_cas_config_ips = 127.0.0.1
-scaledb_cas_config_ports = 13306
+scaledb_cas_config_ports = 15306
