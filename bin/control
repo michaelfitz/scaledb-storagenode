@@ -33,7 +33,7 @@ function start {
     echo "Starting MySQL cartridge"
     
     ${OPENSHIFT_MARIADB_DIR}/michael44/scaledb-latest-mariadb-5.5.34/lib/scaledb_cas ${OPENSHIFT_MARIADB_DIR}/bin/cas.cnf 127.0.0.1 13306 CAS1 &
-    ${OPENSHIFT_MARIADB_DIR}/michael44/scaledb-latest-mariadb-5.5.34/lib/scaledb_slm ${OPENSHIFT_MARIADB_DIR}/bin/slm.cnf &
+#    ${OPENSHIFT_MARIADB_DIR}/michael44/scaledb-latest-mariadb-5.5.34/lib/scaledb_slm ${OPENSHIFT_MARIADB_DIR}/bin/slm.cnf &
     
     erb conf/my.cnf.erb.hidden > conf/my.cnf
     /usr/bin/mysqld_safe --defaults-file=$OPENSHIFT_MARIADB_DIR/conf/my.cnf > /dev/null 2>&1 &
