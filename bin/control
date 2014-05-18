@@ -32,8 +32,8 @@ function start {
   if ! is_running; then
     echo "Starting MySQL cartridge"
     
-    #${OPENSHIFT_MARIADB_DIR}/michael44/scaledb-latest-mariadb-5.5.34/lib/scaledb_cas ${OPENSHIFT_MARIADB_DIR}/bin/cas.cnf $OPENSHIFT_MARIADB_DB_HOST 15306 CAS1  > t1.txt 2>&1 &
-    #${OPENSHIFT_MARIADB_DIR}/michael44/scaledb-latest-mariadb-5.5.34/lib/scaledb_slm ${OPENSHIFT_MARIADB_DIR}/bin/slm.cnf > t2.txt 2>&1 &
+    ${OPENSHIFT_MARIADB_DIR}/michael44/scaledb-latest-mariadb-5.5.34/lib/scaledb_cas ${OPENSHIFT_MARIADB_DIR}/bin/cas.cnf $OPENSHIFT_MARIADB_DB_HOST 15306 CAS1  > t1.txt 2>&1 &
+    ${OPENSHIFT_MARIADB_DIR}/michael44/scaledb-latest-mariadb-5.5.34/lib/scaledb_slm ${OPENSHIFT_MARIADB_DIR}/bin/slm.cnf > t2.txt 2>&1 &
     
     
     #sleep 20
