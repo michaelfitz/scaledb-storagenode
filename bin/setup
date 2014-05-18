@@ -24,4 +24,4 @@ chmod +x ~/mariadb/michael44/scaledb-latest-mariadb-5.5.34/lib/scaledb_cas
 chmod +x ~/mariadb/michael44/scaledb-latest-mariadb-5.5.34/lib/scaledb_slm
 
 cp ~/mariadb/michael44/scaledb-latest-mariadb-5.5.34/lib/ha_scaledb.so ~/mariadb/michael44/mariadb-5.5.34-linux-x86_64/lib/plugin/
-cp ~/mariadb/bin/scaledb.cnf ~/mariadb/michael44/mariadb-5.5.34-linux-x86_64/data/
+#cp ~/mariadb/bin/scaledb.cnf ~/mariadb/michael44/mariadb-5.5.34-linux-x86_64/data/
