@@ -1,6 +1,6 @@
-slm_ip = 127.0.0.1
+slm_ip = OPENSHIFT_MARIADB_DB_HOST
 slm_port = 16306
 
 
-scaledb_cas_config_ips = 127.0.0.1
+scaledb_cas_config_ips = OPENSHIFT_MARIADB_DB_HOST
 scaledb_cas_config_ports = 15306
