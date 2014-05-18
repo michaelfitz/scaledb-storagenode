@@ -1,5 +1,5 @@
 slm_ip = 127.0.0.1
-slm_port = 43306
+slm_port = 16306
 
 
 scaledb_cas_config_ips = 127.0.0.1
