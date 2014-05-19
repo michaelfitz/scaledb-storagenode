@@ -36,6 +36,7 @@ sed -e "s|OPENSHIFT_MARIADB_DB_HOST|${OPENSHIFT_MARIADB_DB_HOST}|" ${OPENSHIFT_M
 cp ${OPENSHIFT_MARIADB_DIR}/bin/scaledb.cnf ${OPENSHIFT_MARIADB_DIR}/michael44/mariadb-5.5.34-linux-x86_64/data/
 cp ${OPENSHIFT_MARIADB_DIR}/bin/cas.cnf ${OPENSHIFT_MARIADB_DIR}/cas.cnf
 cp ${OPENSHIFT_MARIADB_DIR}/bin/slm.cnf ${OPENSHIFT_MARIADB_DIR}/slm.cnf
+cp ${OPENSHIFT_MARIADB_DIR}/bin/config.cnf ${OPENSHIFT_MARIADB_DIR}/config.cnf
 
 ${OPENSHIFT_MARIADB_DIR}/michael44/mariadb-5.5.34-linux-x86_64/scripts/mysql_install_db   --basedir=${OPENSHIFT_MARIADB_DIR}/michael44/mariadb-5.5.34-linux-x86_64   --defaults-file=${OPENSHIFT_MARIADB_DIR}/bin/config.cnf  > t.txt
 
