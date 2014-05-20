@@ -1,22 +1,22 @@
 ---
 Name: mariadb
-Cartridge-Short-Name: MARIADB
+Cartridge-Short-Name: SCALEDB
 Architecture: noarch
-Display-Name: MariaDB 5.5
-Description: MariaDB is a multi-user, multi-threaded SQL database server.
+Display-Name: ScaleDB 5.5
+Description: ScaleDB is a multi-user, multi-threaded Scaleable SQL database server.
 Version: '5.5'
 Versions:
 - '5.5'
 Cartridge-Version: 0.2.3
-Cartridge-Vendor: developercorey
+Cartridge-Vendor: scaledb
 License: GPL
-Vendor: MariaDB Foundation
+Vendor: ScaleDB
 Source-Url: https://github.com/michaelfitz/scaledb-dbnode.git
 Categories:
 - service
 - database
 - embedded
-Website: https://www.mariadb.org/
+Website: https://www.scaledb.com/
 Help-Topics:
   Building with MariaDB: http://docs.redhat.com/docs/en-US/OpenShift/2.0/html/User_Guide/sect-User_Guide-Working_With_Database_Cartridges.html
 Cart-Data:
