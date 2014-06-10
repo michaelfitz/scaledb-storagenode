@@ -52,7 +52,7 @@ client_result "   Root Password: $password"
 client_result "   Database Name: $OPENSHIFT_APP_NAME"
 client_result ""
 
-client_result 'Connection URL: mysql://$OPENSHIFT_MARIADB_DB_HOST:$OPENSHIFT_MARIADB_DB_PORT/'
+client_result "Connection URL: mysql://$OPENSHIFT_MARIADB_DB_HOST:$OPENSHIFT_MARIADB_DB_PORT/"
 client_result ""
 client_result "You can manage your new MySQL database by also embedding phpmyadmin."
 client_result "The phpmyadmin username and password will be the same as the MySQL credentials above."
