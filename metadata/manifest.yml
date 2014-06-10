@@ -47,7 +47,7 @@ Scaling:
 Endpoints:
 - Private-IP-Name: DB_HOST
   Private-Port-Name: DB_PORT
-  Private-Port: 19308
+  Private-Port: 3306
   Public-Port-Name: DB_PROXY_PORT
   Protocols:
   - mysql
