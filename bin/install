@@ -20,7 +20,7 @@ echo "mysql://$username:$password@$OPENSHIFT_MARIADB_DB_HOST:$OPENSHIFT_MARIADB_
 echo 'Installing mariadb'
 
 # Must be invoked with absolute path to avoid a mariadb bug involving my_print_defaults
-### /usr/bin/mysql_install_db --datadir=$OPENSHIFT_MARIADB_DIR/data || error 'Failed to create mariadb', 119
+/usr/bin/mysql_install_db --datadir=$OPENSHIFT_MARIADB_DIR/data || error 'Failed to create mariadb', 119
 
 export LD_LIBRARY_PATH="${OPENSHIFT_MARIADB_DIR}/michael44/scaledb-latest-mariadb-5.5.34/lib"
 
