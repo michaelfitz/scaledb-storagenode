@@ -17,7 +17,7 @@
 # The following options will be passed to all MySQL clients
 [client]
 #password       = your_password
-port            = 19306
+port            = OPENSHIFT_MARIADB_DB_PORT
 socket          = /tmp/mysql.sock
 
 # Here follows entries for some specific programs
@@ -25,7 +25,7 @@ socket          = /tmp/mysql.sock
 # The MySQL server
 [mysqld]
 bind-address    = OPENSHIFT_MARIADB_DB_HOST
-port            = 19306
+port            = OPENSHIFT_MARIADB_DB_PORT
 socket          = /tmp/mysql.sock
 skip-external-locking
 key_buffer_size = 16K
