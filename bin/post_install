@@ -8,3 +8,4 @@ username=$OPENSHIFT_MARIADB_DB_USERNAME
 password=$OPENSHIFT_MARIADB_DB_PASSWORD
 
 # TODO: Should be we running mysql_secure_installation
+echo "GRANT ALL ON *.* to root@'%'; flush privileges;" | ${OPENSHIFT_MARIADB_DIR}/michael44/mariadb-5.5.34-linux-x86_64/bin/mysql -uroot > /dev/null || error "Failed to setup initial root user" 187
