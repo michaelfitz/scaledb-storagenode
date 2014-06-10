@@ -50,8 +50,8 @@ function start {
     ${OPENSHIFT_MARIADB_DIR}/michael44/mariadb-5.5.34-linux-x86_64/bin/mysql -uroot -e "INSTALL PLUGIN scaledb SONAME 'ha_scaledb.so'"
 
     
-    erb conf/my.cnf.erb.hidden > conf/my.cnf
-    /usr/bin/mysqld_safe --defaults-file=$OPENSHIFT_MARIADB_DIR/conf/my.cnf > /dev/null 2>&1 &
+   ### erb conf/my.cnf.erb.hidden > conf/my.cnf
+  ###  /usr/bin/mysqld_safe --defaults-file=$OPENSHIFT_MARIADB_DIR/conf/my.cnf > /dev/null 2>&1 &
     wait_for_mysqld_availability
   else
     echo "MySQL already running" 1>&2
@@ -95,7 +95,7 @@ function stop {
         done
       fi
     else
-      if `pgrep -x mysqld_safe > /dev/null 2>&1`; then
+      if `pgrep -x mysqld > /dev/null 2>&1`; then
         echo "Warning: MySQL process exists without a pid file.  Use force-stop to kill." 1>&2
       else
           echo "MySQL already stopped" 1>&2
