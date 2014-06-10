@@ -52,7 +52,7 @@ function start {
     
    ### erb conf/my.cnf.erb.hidden > conf/my.cnf
   ###  /usr/bin/mysqld_safe --defaults-file=$OPENSHIFT_MARIADB_DIR/conf/my.cnf > /dev/null 2>&1 &
-  wait_for_mysqld_availability
+  ###wait_for_mysqld_availability
   else
     echo "MySQL already running" 1>&2
   fi
