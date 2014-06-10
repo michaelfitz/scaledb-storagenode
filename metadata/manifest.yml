@@ -1,7 +1,7 @@
 ---
 Name: mariadb
 Cartridge-Short-Name: MARIADB
-Architecture: noarch
+Architecture: noarch1
 -Display-Name: MariaDB 5.5
 -Description: MariaDB is a multi-user, multi-threaded SQL database server.
 Version: '5.5'
