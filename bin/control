@@ -16,7 +16,7 @@ function is_running {
     mariadb_pid=`cat $pidfile 2> /dev/null`
     myid=`id -u`
 
-    if `ps --pid $mariadb_pid > /dev/null 2>&1` || `pgrep -x mysqld_safe -u $myid > /dev/null 2>&1`
+    if `ps --pid $mariadb_pid > /dev/null 2>&1` || `pgrep -x mysqld -u $myid > /dev/null 2>&1`
     then
       return 0
     fi
