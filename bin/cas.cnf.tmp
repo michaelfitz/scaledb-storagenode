@@ -14,7 +14,7 @@ scaledb_cas_server_ports = 15306
 
 
 run_debug_tests = false
-
+scaledb_log_file_max_size=100
 scaledb_max_file_handles = 1
 scaledb_enable_optimization = false
 scaledb_slm_threads = 4
