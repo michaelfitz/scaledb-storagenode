@@ -42,7 +42,7 @@ Publishes:
   publish-db-connection-info:
     Type: ENV:NET_TCP:db:connection-info
   publish-node-info:
-    Type: ENV:NET_TCP:db:node-info
+    Type: ENV:NET_TCP:node-info
 Scaling:
   Min: 1
   Max: 2
