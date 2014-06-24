@@ -1,0 +1,12 @@
+#!/bin/bash
+
+set -e
+
+# Manual Test
+# sh hooks/set-mariadb-node publish-mariadb mariadb andrewklau GEAR-DNS:MYSQL-PORT:GALERA-PORT:SST-PORT
+
+#app_name=$1
+#namespace=$2
+#local_gear=$3
+
+echo "$@" >> $OPENSHIFT_HAPROXYMARIADB_DIR/hook-log
