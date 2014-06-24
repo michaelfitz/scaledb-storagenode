@@ -14,7 +14,7 @@ gunzip mariadb-5.5.34-linux-x86_64-small.tar.gz
 tar xvf mariadb-5.5.34-linux-x86_64-small.tar
 rm mariadb-5.5.34-linux-x86_64-small.tar
 
-wget www.scaledb.com/scaledb-latest-mariadb-5.5.34.tar.gz
+wget pub.scaledb.com/dump/scaledb-latest-mariadb-5.5.34.tar.gz
 gunzip scaledb-latest-mariadb-5.5.34.tar.gz
 tar xvf  scaledb-latest-mariadb-5.5.34.tar
 rm scaledb-latest-mariadb-5.5.34.tar
