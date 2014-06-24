@@ -9,4 +9,4 @@ set -e
 #namespace=$2
 #local_gear=$3
 
-echo "$@" >> $OPENSHIFT_HAPROXYMARIADB_DIR/hook-log
+echo "$@" >> $OPENSHIFT_MARIADB_DIR/hook-log
