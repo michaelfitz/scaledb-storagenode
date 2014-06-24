@@ -8,5 +8,5 @@ set -e
 #app_name=$1
 #namespace=$2
 #local_gear=$3
-
-echo "$@" >> $OPENSHIFT_MARIADB_DIR/hook-log
+ 
+echo "$@" $(date) >> $OPENSHIFT_MARIADB_DIR/hook-log
