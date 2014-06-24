@@ -41,6 +41,8 @@ Provides:
 Publishes:
   publish-db-connection-info:
     Type: ENV:NET_TCP:db:connection-info
+  publish-mariadb-node:
+    Type: NET_TCP:mariadb-cluster
 Scaling:
   Min: 1
   Max: 2
