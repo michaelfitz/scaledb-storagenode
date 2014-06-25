@@ -3,4 +3,4 @@ slm_port = 16306
 
 
 scaledb_cas_config_ips = OPENSHIFT_MARIADB_DB_HOST
-scaledb_cas_config_ports = 15306
+scaledb_cas_config_ports = OPENSHIFT_CAS_PORT
