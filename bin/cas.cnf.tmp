@@ -10,7 +10,7 @@ scaledb_io_threads = 4
 # scaledb_service_port = 15000
 
 scaledb_cas_server_ips = OPENSHIFT_MARIADB_DB_HOST
-scaledb_cas_server_ports = 15306
+scaledb_cas_server_ports = OPENSHIFT_CAS_PORT
 
 
 run_debug_tests = false
