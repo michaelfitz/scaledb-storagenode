@@ -10,6 +10,12 @@ function run_sql {
  }
 
 
+
+function get_gear_ip {
+   export GEAR_IP=`ping -c1 -n $OPENSHIFT_GEAR_DNS  | head -n1 | sed "s/.*(\([0-9]*\.[0-9]*\.[0-9]*\.[0-9]*\)).*/\1/g" `
+ }
+ 
+
 ### echo "$@" | /usr/bin/mysql -h $OPENSHIFT_MARIADB_DB_HOST -P $OPENSHIFT_MARIADB_DB_PORT -u $OPENSHIFT_MARIADB_DB_USERNAME --password="$OPENSHIFT_MARIADB_DB_PASSWORD" --skip-column-names
 
 
@@ -37,13 +43,15 @@ function start {
     echo "Starting MySQL cartridge"
     
     echo $OPENSHIFT_MARIADB_CAS_PROXY_PORT > t56
+    get_gear_ip
+    echo $GEAR_IP >t57
     
     
 sed -e "s|OPENSHIFT_MARIADB_DIR|${OPENSHIFT_MARIADB_DIR}|" ${OPENSHIFT_MARIADB_DIR}/bin/cas.cnf.tmp > ${OPENSHIFT_MARIADB_DIR}/cas.cnf.tmp2
-sed -e "s|OPENSHIFT_MARIADB_DB_HOST|${OPENSHIFT_GEAR_DNS}|" ${OPENSHIFT_MARIADB_DIR}/cas.cnf.tmp2 > ${OPENSHIFT_MARIADB_DIR}/cas.cnf.tmp3
+sed -e "s|OPENSHIFT_MARIADB_DB_HOST|${GEAR_IP}|" ${OPENSHIFT_MARIADB_DIR}/cas.cnf.tmp2 > ${OPENSHIFT_MARIADB_DIR}/cas.cnf.tmp3
 sed -e "s|OPENSHIFT_CAS_PORT|${OPENSHIFT_MARIADB_CAS_PROXY_PORT}|" ${OPENSHIFT_MARIADB_DIR}/cas.cnf.tmp3 > ${OPENSHIFT_MARIADB_DIR}/cas.cnf
 
-sed -e "s|OPENSHIFT_MARIADB_DB_HOST|${OPENSHIFT_GEAR_DNS}|" ${OPENSHIFT_MARIADB_DIR}/bin/scaledb.cnf.tmp > ${OPENSHIFT_MARIADB_DIR}/scaledb.cnf.tmp2
+sed -e "s|OPENSHIFT_MARIADB_DB_HOST|${GEAR_IP}|" ${OPENSHIFT_MARIADB_DIR}/bin/scaledb.cnf.tmp > ${OPENSHIFT_MARIADB_DIR}/scaledb.cnf.tmp2
 sed -e "s|OPENSHIFT_CAS_PORT|${OPENSHIFT_MARIADB_CAS_PROXY_PORT}|" ${OPENSHIFT_MARIADB_DIR}/scaledb.cnf.tmp2 > ${OPENSHIFT_MARIADB_DIR}/scaledb.cnf
 
 
