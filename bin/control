@@ -36,6 +36,8 @@ function start {
   if ! is_running; then
     echo "Starting MySQL cartridge"
     
+    echo $OPENSHIFT_MARIADB_CAS_PROXY_PORT > t56
+    
     ${OPENSHIFT_MARIADB_DIR}/michael44/scaledb-latest-mariadb-5.5.34/lib/scaledb_cas ${OPENSHIFT_MARIADB_DIR}/cas.cnf $OPENSHIFT_GEAR_DNS $OPENSHIFT_MARIADB_CAS_PROXY_PORT  CAS1  > t1.txt 2>&1 &
     sleep 5
     
