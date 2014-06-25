@@ -52,6 +52,11 @@ sed -e "s|OPENSHIFT_MARIADB_DB_HOST|${OPENSHIFT_GEAR_DNS}|" ${OPENSHIFT_MARIADB_
 sed -e "s|OPENSHIFT_CAS_PORT|${OPENSHIFT_MARIADB_CAS_PROXY_PORT}|" ${OPENSHIFT_MARIADB_DIR}/bin/slm.cnf.tmp2 > ${OPENSHIFT_MARIADB_DIR}/bin/slm.cnf
 
     
+cp ${OPENSHIFT_MARIADB_DIR}/bin/scaledb.cnf ${OPENSHIFT_MARIADB_DIR}/michael44/mariadb-5.5.34-linux-x86_64/data/
+cp ${OPENSHIFT_MARIADB_DIR}/bin/cas.cnf ${OPENSHIFT_MARIADB_DIR}/cas.cnf
+cp ${OPENSHIFT_MARIADB_DIR}/bin/slm.cnf ${OPENSHIFT_MARIADB_DIR}/slm.cnf    
+    
+    
     ${OPENSHIFT_MARIADB_DIR}/michael44/scaledb-latest-mariadb-5.5.34/lib/scaledb_cas ${OPENSHIFT_MARIADB_DIR}/cas.cnf $OPENSHIFT_GEAR_DNS $OPENSHIFT_MARIADB_CAS_PROXY_PORT  CAS1  > t1.txt 2>&1 &
     sleep 5
     
