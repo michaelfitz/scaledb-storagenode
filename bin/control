@@ -72,6 +72,8 @@ cp ${OPENSHIFT_MARIADB_DIR}/scaledb.cnf ${OPENSHIFT_MARIADB_DIR}/michael44/maria
     ${OPENSHIFT_MARIADB_DIR}/michael44/scaledb-latest-mariadb-5.5.34/lib/scaledb_cas ${OPENSHIFT_MARIADB_DIR}/cas.cnf $OPENSHIFT_MARIADB_DB_HOST $OPENSHIFT_MARIADB_CAS_PORT  CAS1  > t1.txt 2>&1 &
     sleep 5
     
+    cp ${OPENSHIFT_MARIADB_DIR}/michael44/scaledb/data/CAS1/slm.registry.save ${OPENSHIFT_MARIADB_DIR}/michael44/scaledb/data/CAS1/slm.registry    
+    
     ${OPENSHIFT_MARIADB_DIR}/michael44/scaledb-latest-mariadb-5.5.34/lib/scaledb_slm ${OPENSHIFT_MARIADB_DIR}/slm.cnf > t2.txt 2>&1 &
     
 #    export LD_LIBRARY_PATH="${OPENSHIFT_MARIADB_DIR}/michael44/scaledb-latest-mariadb-5.5.34/lib"
