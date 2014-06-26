@@ -58,7 +58,7 @@ Endpoints:
   Private-Port-Name: CAS_PORT
   Private-Port: 15306
   Public-Port-Name: CAS_PROXY_PORT
-  - Private-IP-Name: DB_HOST
+- Private-IP-Name: DB_HOST
   Private-Port-Name: SLM_PORT
   Private-Port: 16306
   Public-Port-Name: SLM_PROXY_PORT
