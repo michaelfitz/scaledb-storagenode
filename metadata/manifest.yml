@@ -11,7 +11,7 @@ Cartridge-Version: 0.2.3
 Cartridge-Vendor: developercorey
 License: GPL
 Vendor: MariaDB Foundation
-Source-Url: https://github.com/michaelfitz/scaledb-dbnode.git
+Source-Url: https://github.com/michaelfitz/scaledb-storagenode.git
 Categories:
 - service
 - database
