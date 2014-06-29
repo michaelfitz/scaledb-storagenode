@@ -64,7 +64,7 @@ sed -e "s|OPENSHIFT_MARIADB_DB_HOST|`printf "%-20s" ${GEAR_IP}`|" ${OPENSHIFT_MA
     
 #sed -e "s|OPENSHIFT_MARIADB_DB_HOST|${GEAR_IP}|" ${OPENSHIFT_MARIADB_DIR}/bin/slm.registry.tmp > ${OPENSHIFT_MARIADB_DIR}/slm.registry.tmp2
 
-sed -e "s|OPENSHIFT_MARIADB_SLM_PROXY_PORT|`printf "%-8s" ${OPENSHIFT_MARIADB_SLM_PROXY_PORT}`" ${OPENSHIFT_MARIADB_DIR}/slm.registry.tmp2 > ${OPENSHIFT_MARIADB_DIR}/michael44/scaledb/data/CAS1/slm.registry
+sed -e "s|OPENSHIFT_MARIADB_SLM_PROXY_PORT|`printf "%-8s" ${OPENSHIFT_MARIADB_SLM_PROXY_PORT}`|" ${OPENSHIFT_MARIADB_DIR}/slm.registry.tmp2 > ${OPENSHIFT_MARIADB_DIR}/michael44/scaledb/data/CAS1/slm.registry
 ###########sed -e "s|OPENSHIFT_MARIADB_SLM_PROXY_PORT|${OPENSHIFT_MARIADB_SLM_PROXY_PORT}|" ${OPENSHIFT_MARIADB_DIR}/slm.registry.tmp2 > ${OPENSHIFT_MARIADB_DIR}/michael44/scaledb/data/CAS1/slm.registry
 
 cp ${OPENSHIFT_MARIADB_DIR}/michael44/scaledb/data/CAS1/slm.registry ${OPENSHIFT_MARIADB_DIR}/michael44/scaledb/data/CAS1/slm.registry.save    
