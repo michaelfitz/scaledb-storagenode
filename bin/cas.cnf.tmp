@@ -1,6 +1,11 @@
-scaledb_data_directory    = OPENSHIFT_MARIADB_DIR/michael44/scaledb/data
-scaledb_db_directory test = OPENSHIFT_MARIADB_DIR/michael44/scaledb/data/test
-scaledb_log_directory     = OPENSHIFT_MARIADB_DIR/michael44/scaledb/logs
+#scaledb_data_directory    = OPENSHIFT_MARIADB_DIR/michael44/scaledb/data
+#scaledb_db_directory test = OPENSHIFT_MARIADB_DIR/michael44/scaledb/data/test
+#scaledb_log_directory     = OPENSHIFT_MARIADB_DIR/michael44/scaledb/logs
+
+
+scaledb_data_directory    = /tmp/data
+scaledb_db_directory test = /tmp/data/test
+scaledb_log_directory     = /tmp/logs
 
 scaledb_io_threads = 4
 #scaledb_data_io_flags=2
