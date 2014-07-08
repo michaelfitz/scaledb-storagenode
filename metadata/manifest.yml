@@ -46,6 +46,8 @@ Publishes:
 Subscribes:
   set-mariadb-node:
     Type: NET_TCP:mariadb-cluster
+    set-slm-node:
+    Type: NET_TCP:mariadb-cluster  
 Scaling:
   Min: 1
   Max: 10
