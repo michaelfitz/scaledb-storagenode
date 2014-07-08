@@ -1,1 +1,13 @@
+#!/bin/bash
 
+
+
+
+function get_cas_ip {
+   export CAS_IP=`ping -c1 -n $CAS_NAME  | head -n1 | sed "s/.*(\([0-9]*\.[0-9]*\.[0-9]*\.[0-9]*\)).*/\1/g" `
+ }
+
+
+
+echo "$@"  >> $OPENSHIFT_MARIADB_DIR/slm-hook-log
+echo "$@"  >  $OPENSHIFT_MARIADB_DIR/slm-hook-log-latest
