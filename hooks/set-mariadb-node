@@ -1,12 +1,14 @@
 #!/bin/bash
 
 
+
+
 function get_cas_ip {
    export CAS_IP=`ping -c1 -n $CAS_NAME  | head -n1 | sed "s/.*(\([0-9]*\.[0-9]*\.[0-9]*\.[0-9]*\)).*/\1/g" `
  }
- 
 
-set -e
+
+#set -e
 
 # Manual Test
 # sh hooks/set-mariadb-node publish-mariadb mariadb andrewklau GEAR-DNS:MYSQL-PORT:GALERA-PORT:SST-PORT
@@ -14,21 +16,26 @@ set -e
 #app_name=$1
 #namespace=$2
 #local_gear=$3
- 
+
 echo "$@"  >> $OPENSHIFT_MARIADB_DIR/hook-log
+echo "$@"  >  $OPENSHIFT_MARIADB_DIR/hook-log-latest
 
-
-CAS_NAME=`cat hook-log | sed "s/'//g" | grep -m 1 -o 'OPENSHIFT_CAS_NODE_FROM_STORAGE=.*' | cut -d '=' -f 2 | cut -d ':' -f 1`
-CAS_PORT=`cat hook-log | sed "s/'//g" | grep -m 1 -o 'OPENSHIFT_CAS_NODE_FROM_STORAGE=.*' | cut -d '=' -f 2 | cut -d ':' -f 2`
+CAS_NAME=`cat hook-log-latest | sed "s/'//g" | grep -m 1 -o 'OPENSHIFT_CAS_NODE_FROM_STORAGE=.*' | cut -d '=' -f 2 | cut -d ':' -f 1`
+CAS_PORT=`cat hook-log-latest | sed "s/'//g" | grep -m 1 -o 'OPENSHIFT_CAS_NODE_FROM_STORAGE=.*' | cut -d '=' -f 2 | cut -d ':' -f 2`
 get_cas_ip
 
-grep "scaledb_cas_server_ips *=.*$CAS_IP" ${OPENSHIFT_MARIADB_DIR}/cas.cnf.cnf &>/dev/null
+echo $CAS_NAME
+echo $CAS_IP
+echo $CAS_PORT
+echo "HERE1"
+grep "scaledb_cas_server_ips *=.*$CAS_IP" ${OPENSHIFT_MARIADB_DIR}/cas.cnf
 if [ $? -ne 0 ];then
     echo "ip is not in the cas_server_ips list, adding"
     cas_list=`grep "scaledb_cas_server_ips.*" ${OPENSHIFT_MARIADB_DIR}/cas.cnf 2>/dev/null`
     cas_list="$cas_list,$CAS_IP"
     sed -i "s/scaledb_cas_server_ips.*/$cas_list/" ${OPENSHIFT_MARIADB_DIR}/cas.cnf
 fi
+echo "HERE"
 
 grep "scaledb_cas_server_ips *=.*$CAS_IP" ${OPENSHIFT_MARIADB_DIR}/cas.cnf &>/dev/null
 if [ $? -ne 0 ];then
@@ -49,6 +56,11 @@ if [ $? -ne 0 ];then
     echo "ERROR - failed to update scaledb_cas_server_ports"
     exit 1
 fi
+
+
+
+
+
 
 
 
