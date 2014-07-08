@@ -44,7 +44,7 @@ Publishes:
   publish-mariadb-node:
     Type: NET_TCP:mariadb-cluster
   publish-cas-node:
-    Type: NET_TCP:slm-cluster
+    Type: NET_TCP:cas-cluster
 Subscribes:
   set-mariadb-node:
     Type: NET_TCP:mariadb-cluster
