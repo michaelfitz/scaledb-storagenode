@@ -17,6 +17,11 @@ function get_cas_ip {
 #namespace=$2
 #local_gear=$3
 
+echo $1 > $OPENSHIFT_MARIADB_DIR/hook-log1
+echo $2 > $OPENSHIFT_MARIADB_DIR/hook-log2
+echo $3 > $OPENSHIFT_MARIADB_DIR/hook-log3
+echo $4 > $OPENSHIFT_MARIADB_DIR/hook-log4
+
 echo "$@"  >> $OPENSHIFT_MARIADB_DIR/hook-log
 echo "$@"  >  $OPENSHIFT_MARIADB_DIR/hook-log-latest
 
