@@ -25,8 +25,26 @@ echo $4 > $OPENSHIFT_MARIADB_DIR/hook-log4
 echo "$@"  >> $OPENSHIFT_MARIADB_DIR/hook-log
 echo "$@"  >  $OPENSHIFT_MARIADB_DIR/hook-log-latest
 
-CAS_NAME=`cat hook-log-latest | sed "s/'//g" | grep -m 1 -o 'OPENSHIFT_CAS_NODE_FROM_STORAGE=.*' | cut -d '=' -f 2 | cut -d ':' -f 1`
-CAS_PORT=`cat hook-log-latest | sed "s/'//g" | grep -m 1 -o 'OPENSHIFT_CAS_NODE_FROM_STORAGE=.*' | cut -d '=' -f 2 | cut -d ':' -f 2`
+#CAS_NAME=`cat hook-log-latest | sed "s/'//g" | grep -m 1 -o 'OPENSHIFT_CAS_NODE_FROM_STORAGE=.*' | cut -d '=' -f 2 | cut -d ':' -f 1`
+#CAS_PORT=`cat hook-log-latest | sed "s/'//g" | grep -m 1 -o 'OPENSHIFT_CAS_NODE_FROM_STORAGE=.*' | cut -d '=' -f 2 | cut -d ':' -f 2`
+
+#get the scond address
+CAS_NAME_ARRAY=(`cat hook-log-latest | sed "s/'//g" | grep -m 2 -o 'OPENSHIFT_CAS_NODE_FROM_STORAGE=.*' | cut -d '=' -f 2 | cut -d ':' -f 1`)
+CAS_PORT_ARRAY=(`cat hook-log-latest | sed "s/'//g" | grep -m 2 -o 'OPENSHIFT_CAS_NODE_FROM_STORAGE=.*' | cut -d '=' -f 2 | cut -d ':' -f 2`)
+
+CAS_NAME0=(`echo ${CAS_NAME_ARRAY[0]}`)
+CAS_PORT0=(`echo ${CAS_PORT_ARRAY[0]}`)
+
+CAS_NAME=(`echo ${CAS_NAME_ARRAY[1]}`)
+CAS_PORT=(`echo ${CAS_PORT_ARRAY[1]}`)
+
+echo $CAS_NAME0
+echo $CAS_PORT0
+
+
+echo $CAS_NAME
+echo $CAS_PORT
+
 get_cas_ip
 
 echo $CAS_NAME
