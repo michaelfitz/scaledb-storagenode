@@ -11,3 +11,29 @@ function get_cas_ip {
 
 echo "$@"  >> $OPENSHIFT_MARIADB_DIR/slm-hook-log
 echo "$@"  >  $OPENSHIFT_MARIADB_DIR/slm-hook-log-latest
+
+
+SLM_NAME=`cat slm-hook-log | sed "s/'//g" | grep -m 1 -o 'OPENSHIFT_FROM_SLM_NODE=.*' | cut -d '=' -f 2 | cut -d ':' -f 1`
+
+if [ "$SLM_NAME" ]
+then
+
+#SL has joined
+#start the CAS
+
+
+export running=`pgrep scaledb_cas`
+
+echo $running > t92
+
+if [ -z "$running" ]
+then
+echo "CAS not running" + $running
+  
+  ${OPENSHIFT_MARIADB_DIR}/michael44/scaledb-latest-mariadb-5.5.34/lib/scaledb_cas ${OPENSHIFT_MARIADB_DIR}/cas.cnf $OPENSHIFT_MARIADB_DB_HOST $OPENSHIFT_MARIADB_CAS_PORT  > t1.txt 2>&1 &
+
+fi
+
+
+
+fi
