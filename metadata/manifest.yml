@@ -49,7 +49,7 @@ Subscribes:
   set-mariadb-node:
     Type: NET_TCP:mariadb-cluster
   set-slm-node:
-    Type: NET_TCP:slm-cluster  
+    Type: NET_TCP:slm-cluster
 Scaling:
   Min: 1
   Max: 10
