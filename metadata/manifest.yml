@@ -1,5 +1,5 @@
 ---
-Name: mariadb
+Name: scaledbcas
 Cartridge-Short-Name: MARIADB
 Architecture: noarch1
 -Display-Name: MariaDB 5.5
@@ -8,7 +8,7 @@ Version: '5.5'
 Versions:
 - '5.5'
 Cartridge-Version: 0.2.3
-Cartridge-Vendor: developercorey
+Cartridge-Vendor: michaelfitz
 License: GPL
 Vendor: MariaDB Foundation
 Source-Url: https://github.com/michaelfitz/scaledb-storagenode.git
