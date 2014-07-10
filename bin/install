@@ -24,7 +24,7 @@ echo 'Installing mariadb'
 
 ###xxx export LD_LIBRARY_PATH="${OPENSHIFT_MARIADB_DIR}/michael44/scaledb-latest-mariadb-5.5.34/lib"
 ##export SCALEDB_INSTALL_PATH=$OPENSHIFT_MARIADB_DIR/michael44/scaledb-latest-mariadb-5.5.34
-export LD_LIBRARY_PATH="${$OPENSHIFT_SCALEDB_INSTALL_DIR}/lib"
+export LD_LIBRARY_PATH="${OPENSHIFT_SCALEDB_INSTALL_DIR}/lib"
   echo $OPENSHIFT_MARIADB_CAS_PROXY_PORT > t55
 
 sed -e "s|OPENSHIFT_MARIADB_DIR|${OPENSHIFT_MARIADB_DIR}|" ${OPENSHIFT_MARIADB_DIR}/bin/config.cnf.tmp > ${OPENSHIFT_MARIADB_DIR}/bin/config.cnf.tmp2
