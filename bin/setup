@@ -18,6 +18,7 @@ wget pub.scaledb.com/dump/scaledb-latest-mariadb-5.5.34.tar.gz
 gunzip scaledb-latest-mariadb-5.5.34.tar.gz
 tar xvf  scaledb-latest-mariadb-5.5.34.tar
 rm scaledb-latest-mariadb-5.5.34.tar
+export SCALEDB_INSTALL_PATH=$OPENSHIFT_MARIADB_DIR/michael44/scaledb-latest-mariadb-5.5.34 
 mkdir scaledb
 cd scaledb
 mkdir data
@@ -26,8 +27,10 @@ mkdir data/CAS1
 mkdir data/test
 mkdir data/test/CAS1
 mkdir logs/CAS1
-chmod +x $OPENSHIFT_MARIADB_DIR/michael44/scaledb-latest-mariadb-5.5.34/lib/scaledb_cas
-chmod +x $OPENSHIFT_MARIADB_DIR/michael44/scaledb-latest-mariadb-5.5.34/lib/scaledb_slm
+#####xxx chmod +x $OPENSHIFT_MARIADB_DIR/michael44/scaledb-latest-mariadb-5.5.34/lib/scaledb_cas
+#####xxx chmod +x $OPENSHIFT_MARIADB_DIR/michael44/scaledb-latest-mariadb-5.5.34/lib/scaledb_slm
+chmod +x $SCALEDB_INSTALL_PATH/lib/scaledb_cas
+chmod +x $SCALEDB_INSTALL_PATH/lib/scaledb_slm
 
 ##cp $OPENSHIFT_MARIADB_DIR/michael44/scaledb-latest-mariadb-5.5.34/lib/ha_scaledb.so $OPENSHIFT_MARIADB_DIR/michael44/mariadb-5.5.34-linux-x86_64/lib/plugin/
 #cp ~/mariadb/bin/scaledb.cnf ~/mariadb/michael44/mariadb-5.5.34-linux-x86_64/data/
