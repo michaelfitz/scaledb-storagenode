@@ -57,7 +57,7 @@ client_result "SCALEDB STORAGE NODE  (CAS) added.  Please make note of the conne
 client_result ""
 client_result "       CAS HOST     : $OPENSHIFT_GEAR_DNS"
 client_result "   CAS PORT (public): $OPENSHIFT_MARIADB_CAS_PROXY_PORT"
-client_result "   Note* won't start untill SLM Joins"
+client_result "   Note* won't start until SLM Joins"
 client_result ""
 
 cart_props 'connection_url=mysql://$OPENSHIFT_MARIADB_DB_HOST:$OPENSHIFT_MARIADB_DB_PORT/'
