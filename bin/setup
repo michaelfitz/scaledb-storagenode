@@ -19,7 +19,7 @@ gunzip scaledb-latest-mariadb-5.5.34.tar.gz
 tar xvf  scaledb-latest-mariadb-5.5.34.tar
 rm scaledb-latest-mariadb-5.5.34.tar
 export SCALEDB_INSTALL_PATH=$OPENSHIFT_MARIADB_DIR/michael44/scaledb-latest-mariadb-5.5.34 
-source ./${OPENSHIFT_MARIADB_DIR}/bin/setmyenv.sh
+source /${OPENSHIFT_MARIADB_DIR}/bin/setmyenv.sh
 mkdir scaledb
 cd scaledb
 mkdir data
