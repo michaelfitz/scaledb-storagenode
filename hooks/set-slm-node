@@ -42,7 +42,7 @@ if [ -z "$running" ]
 then
 echo "CAS not running" + $running
   
-export SSCALEDB_INSTALL_PATH=$OPENSHIFT_MARIADB_DIR/michael44/scaledb-latest-mariadb-5.5.34
+export SCALEDB_INSTALL_PATH=$OPENSHIFT_MARIADB_DIR/michael44/scaledb-latest-mariadb-5.5.34
 
 ${SCALEDB_INSTALL_PATH}/lib/scaledb_cas ${OPENSHIFT_MARIADB_DIR}/cas.cnf $OPENSHIFT_MARIADB_DB_HOST $OPENSHIFT_MARIADB_CAS_PORT  > t1.txt 2>&1 &
 
