@@ -6,13 +6,13 @@ cp conf/my.cnf.erb conf/my.cnf.erb.hidden
 
 mkdir michael44
 cd michael44
-wget pub.scaledb.com/dump/mariadb-5.5.34-linux-x86_64-small.tar.gz
+##wget pub.scaledb.com/dump/mariadb-5.5.34-linux-x86_64-small.tar.gz
 #wget pub.scaledb.com/dump/mariadb-5.5.34-linux-x86_64.tar.gz
 #gunzip mariadb-5.5.34-linux-x86_64.tar.gz
 #tar xvf mariadb-5.5.34-linux-x86_64.tar
-gunzip mariadb-5.5.34-linux-x86_64-small.tar.gz
-tar xvf mariadb-5.5.34-linux-x86_64-small.tar
-rm mariadb-5.5.34-linux-x86_64-small.tar
+##gunzip mariadb-5.5.34-linux-x86_64-small.tar.gz
+##tar xvf mariadb-5.5.34-linux-x86_64-small.tar
+##rm mariadb-5.5.34-linux-x86_64-small.tar
 
 wget pub.scaledb.com/dump/scaledb-latest-mariadb-5.5.34.tar.gz
 gunzip scaledb-latest-mariadb-5.5.34.tar.gz
@@ -29,5 +29,5 @@ mkdir logs/CAS1
 chmod +x $OPENSHIFT_MARIADB_DIR/michael44/scaledb-latest-mariadb-5.5.34/lib/scaledb_cas
 chmod +x $OPENSHIFT_MARIADB_DIR/michael44/scaledb-latest-mariadb-5.5.34/lib/scaledb_slm
 
-cp $OPENSHIFT_MARIADB_DIR/michael44/scaledb-latest-mariadb-5.5.34/lib/ha_scaledb.so $OPENSHIFT_MARIADB_DIR/michael44/mariadb-5.5.34-linux-x86_64/lib/plugin/
+##cp $OPENSHIFT_MARIADB_DIR/michael44/scaledb-latest-mariadb-5.5.34/lib/ha_scaledb.so $OPENSHIFT_MARIADB_DIR/michael44/mariadb-5.5.34-linux-x86_64/lib/plugin/
 #cp ~/mariadb/bin/scaledb.cnf ~/mariadb/michael44/mariadb-5.5.34-linux-x86_64/data/
